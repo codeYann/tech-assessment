@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: app
+    ports:
+      - 5432:5432
+    volumes:
+      - psql_volume_db:/var/lib/postgresql/data
+    networks:
+      - app_net
+
+volumes:
+  psql_volume_db:
+
+networks:
+  app_net:
