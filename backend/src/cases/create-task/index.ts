@@ -9,6 +9,7 @@ export type CreateTaskInputDTO = {
 
 export type CreateTaskOutputDTO = {
 	id: string;
+	createdAt: Date;
 };
 
 export class CreateTaskCase
@@ -27,7 +28,7 @@ export class CreateTaskCase
 		try {
 			const task = Task.create(title, priority);
 			await this.taskGateway.save(task);
-			return { id: task.getId() };
+			return { id: task.getId(), createdAt: task.getCreatedAt() };
 		} catch (error) {
 			console.error("Error creating task:", error);
 			throw new Error("Failed to create task");
