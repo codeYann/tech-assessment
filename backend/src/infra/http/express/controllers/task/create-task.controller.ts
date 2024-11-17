@@ -29,7 +29,7 @@ export class CreateTaskController {
 				await this.createTaskService.execute(input);
 
 			const responsePresenter = {
-				id: output.id,	
+				id: output.id,
 				createdAt: output.createdAt,
 			};
 
