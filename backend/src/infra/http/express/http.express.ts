@@ -1,6 +1,7 @@
 import type { IHttp } from "../http";
 import express, { type Express } from "express";
 import type { Route } from "./routes/routes";
+import cors from "cors";
 
 export class HttpExpress implements IHttp {
 	private app: Express;
@@ -8,6 +9,7 @@ export class HttpExpress implements IHttp {
 	private constructor(routes: Route[]) {
 		this.app = express();
 		this.app.use(express.json());
+		this.app.use(cors());
 		this.addRoutes(routes);
 	}
 

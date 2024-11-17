@@ -19,6 +19,7 @@
   "description": "",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.0",
     "prisma": "^5.22.0",
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
+    "cors": "^2.8.5",
     "express": "^4.21.1"
   }
 }
